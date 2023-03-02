@@ -5,6 +5,7 @@ import RootLayout from './layout';
 import { XCircleIcon } from '@heroicons/react/outline';
 import { Store } from '../utils/Store';
 import Image from 'next/image';
+import { getCurrentDate } from '@/utils/getCurrentDate';
 
 function InventoryScreen() {
   const { state, dispatch } = useContext(Store);
@@ -56,7 +57,7 @@ function InventoryScreen() {
                           {item.name}
                         </Link>
                       </td>
-                      <td className="p-5 text-right">dateAdded</td>
+                      <td className="p-5 text-right">{getCurrentDate()}</td>
                       <td className="p-5 text-right">
                         Expires in {item.optimalHold} days
                       </td>
