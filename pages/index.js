@@ -7,7 +7,7 @@ export default function Home() {
     <RootLayout title="Home Page">
       <main className="m-7 items-center">
         <Link href="/product" className="bg-tertiary rounded-md p-1">
-          Add products to your inventory
+          The food app for the anti-planner
         </Link>
         <br />
         <br />
@@ -61,9 +61,7 @@ export default function Home() {
         </div>
         <div className="pt-0 pb-3 grid grid-cols-1 place-content-center w-full">
           {/* @ts-expect-error Server Component */}
-          <button className="border rounded content-center px-[10%] drop-shadow-lg">
-            {/* SignUp */}Sign up
-          </button>
+          <button className="primary-button">{/* SignUp */}Sign up</button>
         </div>
       </main>
     </RootLayout>

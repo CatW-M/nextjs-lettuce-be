@@ -2,15 +2,24 @@ import Link from 'next/link';
 import React from 'react';
 import RootLayout from './layout';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
 
 export default function LoginScreen() {
+  const router = useRouter();
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const submitHandler = ({ email, password }) => {};
+  const submitHandler = ({ email, password }) => {
+    console.log(email, password);
+  };
+
+  const loginHandler = () => {
+    router.push('/product');
+  };
 
   return (
     <div>
@@ -59,7 +68,9 @@ export default function LoginScreen() {
             )}
           </div>
           <div className="mb-4">
-            <button className="primary-button">Login</button>
+            <button className="primary-button" onClick={loginHandler}>
+              Login
+            </button>
           </div>
           <div className="mb-4">
             Don&apos;t have an account? &nbsp;

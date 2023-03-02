@@ -27,54 +27,56 @@ function InventoryScreen() {
             Inventory is empty. <Link href="/product">Add Products</Link>
           </div>
         ) : (
-          <div className="grid md:grid-cols-4 md:gap-5">
-            <div className="overflow-x-auto md:col-span-3">
-              <table className="min-w-full">
-                <thead className="border-b">
-                  <tr>
-                    <th className="px-5 text-left">Item</th>
-                    <th className="p-5 text-right">Date Added</th>
-                    <th className="p-5 text-right">Expiration</th>
-                    <th className="px-5">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {inventoryItems.map((item) => (
-                    <tr key={item.slug} className="border-b">
-                      <td>
-                        <Link
-                          href={`/product/${item.slug}`}
-                          className="flex items-center"
-                        >
-                          {' '}
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            width={50}
-                            height={50}
-                          ></Image>
-                          &nbsp;
-                          {item.name}
-                        </Link>
-                      </td>
-                      <td className="p-5 text-right">{getCurrentDate()}</td>
-                      <td className="p-5 text-right">
-                        Expires in {item.optimalHold} days
-                      </td>
-                      <td className="p-5 text-center">
-                        <button onClick={() => removeItemHandler(item)}>
-                          <XCircleIcon className="h-5 w-5"></XCircleIcon>
-                        </button>
-                      </td>
+          <>
+            <div className="grid md:grid-cols-4 md:gap-5">
+              <div className="overflow-x-auto md:col-span-3">
+                <table className="min-w-full">
+                  <thead className="border-b">
+                    <tr>
+                      <th className="px-5 text-left">Item</th>
+                      <th className="p-5 text-right">Date Added</th>
+                      <th className="p-5 text-right">Expiration</th>
+                      <th className="px-5">Action</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {inventoryItems.map((item) => (
+                      <tr key={item.slug} className="border-b">
+                        <td>
+                          <Link
+                            href={`/product/${item.slug}`}
+                            className="flex items-center"
+                          >
+                            {' '}
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              width={50}
+                              height={50}
+                            ></Image>
+                            &nbsp;
+                            {item.name}
+                          </Link>
+                        </td>
+                        <td className="p-5 text-right">{getCurrentDate()}</td>
+                        <td className="p-5 text-right">
+                          Expires in {item.optimalHold} days
+                        </td>
+                        <td className="p-5 text-center">
+                          <button onClick={() => removeItemHandler(item)}>
+                            <XCircleIcon className="h-5 w-5"></XCircleIcon>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div>
+            <div className="mt-4 font-bold hover:text-green-600">
               <Link href="/product">Add more products</Link>
             </div>
-          </div>
+          </>
         )}
       </RootLayout>
     </div>
