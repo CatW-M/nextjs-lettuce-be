@@ -1,8 +1,11 @@
+import { Store } from '@/utils/Store';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 
 export default function RootLayout({ title, children }) {
+  const { state } = useContext(Store);
+  const { inventory } = state;
   return (
     <>
       <Head>
@@ -19,6 +22,14 @@ export default function RootLayout({ title, children }) {
             <div>
               <Link href="/inventory" className="p-2">
                 Inventory
+                {inventory.inventoryItems.length > 0 && (
+                  <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                    {inventory.inventoryItems.reduce(
+                      (a, c) => a + c.quantity,
+                      0
+                    )}
+                  </span>
+                )}
               </Link>
               <Link href="/login" className="p-2">
                 Log in

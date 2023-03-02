@@ -107,7 +107,7 @@ const data = {
     {
       name: 'spinach, fresh',
       slug: 'spinach-fresh',
-      image: 'public/images/spinachfresh.png',
+      image: '../public/images/spinachfresh.png',
       category: 'veggies',
       storage: 'fridge',
       optimalHold: 10,
