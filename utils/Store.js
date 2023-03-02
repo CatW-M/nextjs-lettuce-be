@@ -1,9 +1,12 @@
 import { createContext, useReducer } from 'react';
+import Cookies from 'js-cookie';
 
 export const Store = createContext();
 
 const initialState = {
-  inventory: { inventoryItems: [] },
+  inventory: Cookies.get('inventory')
+    ? JSON.parse(Cookies.get('inventory'))
+    : { inventoryItems: [] },
 };
 
 function reducer(state, action) {
@@ -18,6 +21,20 @@ function reducer(state, action) {
             item.name === existItem.name ? newItem : item
           )
         : [...state.inventory.inventoryItems, newItem];
+      Cookies.set(
+        'inventory',
+        JSON.stringify({ ...state.inventory, inventoryItems })
+      );
+      return { ...state, inventory: { ...state.inventory, inventoryItems } };
+    }
+    case 'INVENTORY_REMOVE_ITEM': {
+      const inventoryItems = state.inventory.inventoryItems.filter(
+        (item) => item.slug !== action.payload.slug
+      );
+      Cookies.set(
+        'inventory',
+        JSON.stringify({ ...state.inventory, inventoryItems })
+      );
       return { ...state, inventory: { ...state.inventory, inventoryItems } };
     }
     default:

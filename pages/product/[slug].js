@@ -7,6 +7,7 @@ import RootLayout from '../layout';
 
 export default function ProductScreen() {
   const { state, dispatch } = useContext(Store);
+  const router = useRouter();
   const { query } = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
@@ -24,11 +25,12 @@ export default function ProductScreen() {
       type: 'INVENTORY_ADD_ITEM',
       payload: { ...product, quantity },
     });
+    router.push('/inventory');
   };
   return (
     <RootLayout title={product.name}>
       <div className="py-2">
-        <Link href="/">back to products</Link>
+        <Link href="/product">back to products</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
         {/* <div className="md:col-span-2">

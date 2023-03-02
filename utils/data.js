@@ -3,7 +3,7 @@ const data = {
     {
       name: 'fuji apples, whole',
       slug: 'apples-fuji-whole',
-      image: 'public/images/fujiapples.png',
+      image: '/fujiapples.png',
       category: 'fruit',
       storage: 'fridge',
       optimalHold: 42,
@@ -11,7 +11,7 @@ const data = {
     {
       name: 'oranges, whole',
       slug: 'oranges-whole',
-      image: 'public/images/oranges.png',
+      image: '/oranges.png',
       category: 'fruit',
       storage: 'room temperature',
       optimalHold: 10,
@@ -19,7 +19,7 @@ const data = {
     {
       name: 'bananas, whole',
       slug: 'bananas-whole',
-      image: 'public/images/bananas.png',
+      image: '/bananas.png',
       category: 'fruit',
       storage: 'room temperature',
       optimalHold: 5,
@@ -27,7 +27,7 @@ const data = {
     {
       name: 'grapes, green',
       slug: 'grapes-green',
-      image: 'public/images/grapesgreen.png',
+      image: '/grapesgreen.png',
       category: 'fruit',
       storage: 'fridge',
       optimalHold: 7,
@@ -35,7 +35,7 @@ const data = {
     {
       name: 'strawberries',
       slug: 'strawberries',
-      image: 'public/images/strawberries.png',
+      image: '/strawberries.png',
       category: 'fruit',
       storage: 'fridge',
       optimalHold: 5,
@@ -43,7 +43,7 @@ const data = {
     {
       name: 'peaches, whole',
       slug: 'peaches-whole',
-      image: 'public/images/peacheswhole.png',
+      image: '/peacheswhole.png',
       category: 'fruit',
       storage: 'fridge',
       optimalHold: 5,
@@ -51,7 +51,7 @@ const data = {
     {
       name: 'cilantro, dried',
       slug: 'cilantro-dried',
-      image: 'public/images/cilantrodried.png',
+      image: '/cilantrodried.png',
       category: 'veggies',
       storage: 'room temperature',
       optimalHold: 365,
@@ -59,7 +59,7 @@ const data = {
     {
       name: 'cilantro, fresh',
       slug: 'cilantro-fresh',
-      image: 'public/images/cilantrofresh.png',
+      image: '/cilantrofresh.png',
       category: 'veggies',
       storage: 'fridge',
       optimalHold: 30,
@@ -67,7 +67,7 @@ const data = {
     {
       name: 'cilantro, paste',
       slug: 'cilantro-paste',
-      image: 'public/images/cilantropaste.png',
+      image: '/cilantropaste.png',
       category: 'veggies',
       storage: 'fridge',
       optimalHold: 100,
@@ -75,7 +75,7 @@ const data = {
     {
       name: 'sweet potatoes',
       slug: 'potatoes-sweet',
-      image: 'public/images/sweetpotatoes.png',
+      image: '/sweetpotatoes.png',
       category: 'veggies',
       storage: 'countertop',
       optimalHold: 7,
@@ -83,7 +83,7 @@ const data = {
     {
       name: 'oat milk',
       slug: 'milk-oat',
-      image: 'public/images/oatmilk.png',
+      image: '/oatmilk.png',
       category: 'non-dairy',
       storage: 'fridge',
       optimalHold: 7,
@@ -91,7 +91,7 @@ const data = {
     {
       name: 'avocados',
       slug: 'avocados',
-      image: 'public/images/avocados.png',
+      image: '/avocados.png',
       category: 'veggies',
       storage: 'countertop',
       optimalHold: 2,
@@ -99,7 +99,7 @@ const data = {
     {
       name: 'whole wheat bread',
       slug: 'bread-whole-wheat',
-      image: 'public/images/wholewheatbread.png',
+      image: '/wholewheatbread.png',
       category: 'grains',
       storage: 'countertop',
       optimalHold: 7,
@@ -107,7 +107,7 @@ const data = {
     {
       name: 'spinach, fresh',
       slug: 'spinach-fresh',
-      image: '../public/images/spinachfresh.png',
+      image: '/spinachfresh.png',
       category: 'veggies',
       storage: 'fridge',
       optimalHold: 10,
