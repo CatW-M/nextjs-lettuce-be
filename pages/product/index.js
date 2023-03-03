@@ -18,6 +18,9 @@ export default function Home({ products }) {
     );
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.optimalHold < 1) {
+      return toast.error('Use this product today!');
+    }
 
     dispatch({
       type: 'INVENTORY_ADD_ITEM',
