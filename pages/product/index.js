@@ -18,10 +18,10 @@ export default function Home({ products }) {
     );
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
-    if (data.optimalHold < 1) {
-      return toast.error('Use this product today!');
+    if (data.name === 'joke') {
+      toast.error('Sorry. joke is not a food item');
+      return;
     }
-
     dispatch({
       type: 'INVENTORY_ADD_ITEM',
       payload: { ...product, quantity },
@@ -46,10 +46,8 @@ export default function Home({ products }) {
 export async function getServerSideProps() {
   await db.connect();
   const products = await Product.find().lean();
-  const featuredProducts = await Product.find({ isFeatured: true }).lean();
   return {
     props: {
-      featuredProducts: featuredProducts.map(db.convertDocToObj),
       products: products.map(db.convertDocToObj),
     },
   };

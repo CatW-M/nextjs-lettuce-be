@@ -2,6 +2,7 @@ import { getSession } from 'next-auth/react';
 import bcryptjs from 'bcryptjs';
 import User from '../../../models/User';
 import db from '../../../utils/db';
+import util from 'util';
 
 async function handler(req, res) {
   if (req.method !== 'PUT') {
@@ -29,15 +30,28 @@ async function handler(req, res) {
   }
 
   await db.connect();
-  const toUpdateUser = (await User.findById(user._id)) || {};
-  toUpdateUser.name = name;
-  toUpdateUser.email = email;
+  console.log(`-----------`);
+  console.log(user);
+  console.log(`-----------`);
+  console.log(typeof user._id, `|${user._id}|`);
+  const updateUser = await User.findOne({ email: user.email });
+  console.log(`-----------`);
+  console.log(updateUser);
+  console.log(`-----------`);
+  updateUser.name = name;
+  updateUser.email = email;
 
   if (password) {
-    toUpdateUser.password = bcryptjs.hashSync(password);
+    updateUser.password = bcryptjs.hashSync(password);
   }
 
-  await toUpdateUser.save();
+  console.log(util.inspect(updateUser, false, null, true));
+  await updateUser.save(updateUser);
+  console.log(`Saved`);
+  const verifyUser = await User.findOne({ email: user.email });
+  console.log(`-------`);
+  console.log(verifyUser);
+  console.log(`--------`);
   await db.disconnect();
   res.send({
     message: 'User updated',

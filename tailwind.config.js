@@ -9,7 +9,29 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#43B1AA',
+        secondary: '#E4C51F',
+        tertiary: '#B7DBB9',
+        head: '#43B1AA',
+        quarter: '#FFAB48',
+      },
+    },
+    fontSize: {
+      //Adding control to font sizes for our project here
+      '2xsm': '10px',
+      xsm: '12px',
+      sm: '13px',
+      reg: '15px',
+      lg: '18px',
+      '2xl': '22px',
+      '3xl': '25px',
+      '4xl': '32px',
+      '5xl': '40px',
+      '6xl': '50px',
+      '7xl': '70px',
+    },
   },
   plugins: [],
 };

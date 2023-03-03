@@ -4,8 +4,8 @@ import React from 'react';
 
 export default function ProductItem({ product, addToInventoryHandler }) {
   return (
-    <div className="card">
-      <div className="float-left px-3">
+    <div className="card  bg-red-200">
+      <div className="text-center px-3">
         <Link href={`/product/${product.slug}`}>
           <h2 className="text-lg" style={{ textTransform: 'capitalize' }}>
             {product.name}

@@ -1,6 +1,7 @@
 import Product from '@/models/Product';
 import db from '@/utils/db';
 import { Store } from '@/utils/Store';
+import { HeartIcon } from '@heroicons/react/outline/';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
@@ -34,7 +35,7 @@ export default function ProductScreen(props) {
       <div className="py-2">
         <Link href="/product">back to products</Link>
       </div>
-      <div className="grid md:grid-cols-4 md:gap-3">
+      <div className="grid md:grid-cols-2 justify-between md:gap-3">
         {/* <div className="md:col-span-2">
           <Image
             src={product.image}
@@ -54,15 +55,15 @@ export default function ProductScreen(props) {
             <li>Suggested Storage: {product.storage}</li>
           </ul>
         </div>
-        <div>
-          <div className="card p-5">
-            <button
-              className="primary-button w-full"
-              onClick={addToInventoryHandler}
-            >
-              Add to inventory
-            </button>
-          </div>
+        <div className="float-right">
+          <button className="primary-button" onClick={addToInventoryHandler}>
+            Add to List
+          </button>
+        </div>
+        <div className="float-right">
+          <button className="secondary-button" onClick={addToInventoryHandler}>
+            Save to Frequent <HeartIcon className="w-5 h-5 inline-block" />
+          </button>
         </div>
       </div>
     </RootLayout>

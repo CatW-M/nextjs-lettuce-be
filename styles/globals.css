@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
 html,
 body {
@@ -34,7 +35,11 @@ a {
 }
 
 .primary-button {
-  @apply rounded text-white bg-amber-300 py-4 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
+  @apply rounded text-white bg-orange-300 py-4 px-4 shadow outline-none hover:bg-orange-400 active:bg-orange-500 text-2xl mx-3;
+}
+
+.secondary-button {
+  @apply rounded-2xl bg-white py-2 px-10 shadow border hover:bg-green-200 active:bg-green-300 text-lg mx-3;
 }
 
 input,
@@ -45,4 +50,8 @@ textarea {
 
 .dropdown-link {
   @apply flex p-2 hover:bg-gray-200;
+}
+
+.trio {
+  @apply text-2xl text-center;
 }

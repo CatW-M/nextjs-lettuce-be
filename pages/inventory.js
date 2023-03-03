@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import RootLayout from './layout';
 import { XCircleIcon } from '@heroicons/react/outline';
 import { Store } from '../utils/Store';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { getCurrentDate } from '@/utils/getCurrentDate';
 
 function InventoryScreen() {
@@ -48,12 +48,12 @@ function InventoryScreen() {
                             className="flex items-center"
                           >
                             {' '}
-                            <Image
+                            {/* <Image
                               src={item.image}
                               alt={item.name}
                               width={50}
                               height={50}
-                            ></Image>
+                            ></Image> */}
                             &nbsp;
                             {item.name}
                           </Link>
