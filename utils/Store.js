@@ -37,6 +37,13 @@ function reducer(state, action) {
       );
       return { ...state, inventory: { ...state.inventory, inventoryItems } };
     }
+    case 'INVENTORY_RESET':
+      return {
+        ...state,
+        inventory: {
+          inventoryItems: [],
+        },
+      };
     default:
       return state;
   }
