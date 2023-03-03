@@ -39,21 +39,12 @@ export default function RootLayout({ title, children }) {
               LettuceBe
             </Link>
             <div>
-              <Link href="/inventory" className="p-2">
-                Inventory
-                {inventoryItemsCount > 0 && (
-                  <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                    {inventoryItemsCount}
-                  </span>
-                )}
-              </Link>
-
               {status === 'loading' ? (
                 'Loading'
               ) : session?.user ? (
                 <Menu as="div" className="relative inline-block bg-white">
                   <Menu.Button className="text-blue-600">
-                    {session.user.name}
+                    Welcome, {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
                     <Menu.Item>
@@ -62,8 +53,13 @@ export default function RootLayout({ title, children }) {
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/inventory-history" className="dropdown-link">
+                      <Link href="/inventory" className="dropdown-link">
                         Inventory
+                        {inventoryItemsCount > 0 && (
+                          <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                            {inventoryItemsCount}
+                          </span>
+                        )}
                       </Link>
                     </Menu.Item>
                     {session.user.isAdmin && (
