@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
 import RootLayout from '../layout';
-
+import Image from 'next/image';
 export default function ProductScreen(props) {
   const { product } = props;
   const { state, dispatch } = useContext(Store);
@@ -36,14 +36,14 @@ export default function ProductScreen(props) {
         <Link href="/product">back to products</Link>
       </div>
       <div className="grid md:grid-cols-2 justify-between md:gap-3">
-        {/* <div className="md:col-span-2">
+        <div className="md:col-span-2">
           <Image
             src={product.image}
             alt={product.name}
-            width={640}
-            height={640}
+            width={100}
+            height={100}
           ></Image>
-        </div> */}
+        </div>
         <div>
           <ul>
             <li>
