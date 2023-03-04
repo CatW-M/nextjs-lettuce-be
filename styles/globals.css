@@ -53,5 +53,5 @@ textarea {
 }
 
 .trio {
-  @apply text-2xl text-center;
+  @apply text-reg text-center;
 }

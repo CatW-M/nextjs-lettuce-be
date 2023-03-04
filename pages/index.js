@@ -8,8 +8,7 @@ export default function Home() {
       <Link href="/product" className="rounded-md p-1 text-2xl">
         The food app for the anti-planner
       </Link>
-      <main className="m-7 flex flex-col items-center justify-center">
-        <br />
+      <main className="mx-4 flex flex-col items-center justify-center">
         <br />
         <div className="grid">
           <Image
@@ -20,14 +19,16 @@ export default function Home() {
             height={500}
           />
         </div>
-        <div className="text-center mb-3 p-6 text-2xl">
-          <h1 className="text-3xl m-2 p-1">
+        <div className="text-center mb-1 p-4 text-2xl">
+          <h1 className="p-1">
             Meal planning isn&apos;t for everyone. but no one likes throwing
             away expired food.
           </h1>
-          <p> Lettuce help you reduce your food waste, without judgement!</p>
+          <p className="text-lg p-1">
+            Lettuce help you reduce your food waste, without judgement!
+          </p>
         </div>
-        <div className="mt-3 p-6 grid grid-cols-3 text-center">
+        <div className="p-3 grid grid-cols-3 text-center w-[80%]">
           <div>
             <Image
               className="p-4 w-[80%]"
@@ -61,7 +62,7 @@ export default function Home() {
             See when your ingredients are about to expire
           </div>
         </div>
-        <div className="pt-0 pb-3 grid grid-cols-1 place-content-center w-full">
+        <div className="pt-0 pb-3 grid grid-cols-1 place-content-center w-[75%]">
           {/* @ts-expect-error Server Component */}
           <Link href="signup">
             <button className="primary-button w-full">Sign up</button>

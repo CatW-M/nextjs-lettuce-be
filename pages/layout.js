@@ -44,7 +44,7 @@ export default function RootLayout({ title, children }) {
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between">
         <header>
-          <nav className="flex h-12 items-center px-4 justify-between shadow-md bg-teal-400">
+          <nav className="flex h-[10%] p-4 items-center px-4 justify-between shadow-md bg-teal-400">
             <Link href="/" className="font-bold text-lg">
               LettuceBe
             </Link>
