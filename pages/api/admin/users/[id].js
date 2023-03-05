@@ -21,11 +21,11 @@ const deleteHandler = async (req, res) => {
   let userToDelete = await User.findById({ _id: new ObjectId(id) });
 
   if (userToDelete.isAdmin) {
-    return res.status(400).send({ message: 'Can not delete ADMIN' });
+    return res.status(400).send({ message: 'Can not delete admin' });
   }
   await User.findByIdAndDelete({ _id: new ObjectId(id) });
   console.log('user has been deleted');
-  return res.status(201).send({ message: 'I hope this worked' });
+  return res.status(201).send({ message: 'I ' });
 };
 
 // const db = client.db();
