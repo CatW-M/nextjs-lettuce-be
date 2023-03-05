@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import RootLayout from './layout';
@@ -92,7 +94,9 @@ export default function LoginScreen() {
           </div>
           <div className="mb-4">
             Don&apos;t have an account? &nbsp;
-            <Link href="signup">Sign Up Here</Link>
+            <Link href="signup" className="font-bold text-green-400">
+              Sign Up Here
+            </Link>
           </div>
         </form>
       </RootLayout>

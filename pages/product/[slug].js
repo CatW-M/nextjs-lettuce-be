@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
 import RootLayout from '../layout';
 import Image from 'next/image';
+
 export default function ProductScreen(props) {
   const { product } = props;
   const { state, dispatch } = useContext(Store);
@@ -83,3 +84,5 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+ProductScreen.auth = true;

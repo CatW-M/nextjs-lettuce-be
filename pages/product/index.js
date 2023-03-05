@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { toast } from 'react-toastify';
 import RootLayout from '../layout';
 
-export default function Home({ products }) {
+export default function ProductHome({ products }) {
   const { state, dispatch } = useContext(Store);
   const { inventory } = state;
 
@@ -52,3 +52,5 @@ export async function getServerSideProps() {
     },
   };
 }
+
+ProductHome.auth = true;

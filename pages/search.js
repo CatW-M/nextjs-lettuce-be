@@ -11,7 +11,7 @@ import db from '../utils/db';
 
 const PAGE_SIZE = 2;
 
-export default function Search(props) {
+export default function SearchScreen(props) {
   const router = useRouter();
 
   const {
@@ -182,3 +182,5 @@ export async function getServerSideProps({ query }) {
     },
   };
 }
+
+SearchScreen.auth = true;

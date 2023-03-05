@@ -38,3 +38,5 @@ export default function ProductItem({ product, addToInventoryHandler }) {
     </div>
   );
 }
+
+ProductItem.auth = true;

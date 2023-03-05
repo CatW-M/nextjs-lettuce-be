@@ -131,3 +131,5 @@ export default function ProfileScreen() {
     </RootLayout>
   );
 }
+
+ProfileScreen.auth = true;
