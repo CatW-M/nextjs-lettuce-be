@@ -6,7 +6,7 @@ const inventorySchema = new mongoose.Schema(
     inventoryItems: [
       {
         name: { type: String, required: true },
-        quantity: { type: String, required: true, default: 1 },
+        quantity: { type: Number, required: true, default: 1 },
         image: { type: String, required: true },
         dateAdded: { type: Date, required: true },
         optimalHold: { type: Number, required: true },
