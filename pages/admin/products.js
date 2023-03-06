@@ -33,7 +33,7 @@ function reducer(state, action) {
       state;
   }
 }
-export default function AdminProdcutsScreen() {
+export default function AdminProductsScreen() {
   const router = useRouter();
 
   const [
@@ -178,4 +178,4 @@ export default function AdminProdcutsScreen() {
   );
 }
 
-AdminProdcutsScreen.auth = { adminOnly: true };
+AdminProductsScreen.auth = { adminOnly: true };
